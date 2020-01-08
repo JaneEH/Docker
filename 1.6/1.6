@@ -1,0 +1,34 @@
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ mkdir 1.6
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ cd 1.6/
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.6$ nano Dockerfile
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.6$ docker build -t docker-clock .
+Sending build context to Docker daemon  2.048kB
+Error response from daemon: Dockerfile parse error line 3: unknown instruction: CDM
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.6$ nano Dockerfile 
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.6$ docker build -t docker-clock .
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise
+latest: Pulling from devopsdockeruh/overwrite_cmd_exercise
+092586df9206: Pull complete 
+ef599477fae0: Pull complete 
+4530c6472b5d: Pull complete 
+d34d61487075: Pull complete 
+87fc2710b63f: Pull complete 
+e83c771c5387: Pull complete 
+fef6195892ae: Pull complete 
+70e1a68db517: Pull complete 
+c2599bbef3cb: Pull complete 
+c5a7dd6f6ae1: Pull complete 
+446220381e79: Pull complete 
+27d5280e809c: Pull complete 
+Digest: sha256:02e38f4285d5cfaff5ed57ae67a8d99e041027da8f5c972329b46e2b7a47b7d2
+Status: Downloaded newer image for devopsdockeruh/overwrite_cmd_exercise:latest
+ ---> 3d2b622b1849
+Step 2/2 : CMD ["-r"]
+ ---> Running in 7bb9d6767550
+Removing intermediate container 7bb9d6767550
+ ---> 8bd674cc5ee2
+Successfully built 8bd674cc5ee2
+Successfully tagged docker-clock:latest
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.6$ docker run docker-clock
+
