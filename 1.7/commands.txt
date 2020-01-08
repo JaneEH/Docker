@@ -1,0 +1,38 @@
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.7$ docker run -it curler
+Unable to find image 'curler:latest' locally
+docker: Error response from daemon: pull access denied for curler, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.7$ docker build -t curler .
+Sending build context to Docker daemon  3.072kB
+Step 1/4 : FROM ubuntu:latest
+ ---> 549b9b86cb8d
+Step 2/4 : RUN apt-get update && apt-get install -y curl
+ ---> Running in 58909477b112
+ 
+ --------------------------------
+
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Removing intermediate container 58909477b112
+ ---> f5b11a744db9
+Step 3/4 : COPY script.sh .
+ ---> fc41da3ba9ba
+Step 4/4 : CMD ["/bin/bash", "script.sh"]
+ ---> Running in c577f85d3792
+Removing intermediate container c577f85d3792
+ ---> 45ba49d6d5d7
+Successfully built 45ba49d6d5d7
+Successfully tagged curler:latest
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.7$ docker run -it curler
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.7$ 
