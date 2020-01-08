@@ -1,0 +1,18 @@
+1.8
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker exec -it cd bash
+root@cd91e91b0fb7:/usr/app# ls
+Dockerfile  README.md  index.js  logs.txt
+root@cd91e91b0fb7:/usr/app# cd logs.txt 
+bash: cd: logs.txt: Not a directory
+root@cd91e91b0fb7:/usr/app# cat logs.txt 
+Wed, 08 Jan 2020 10:43:11 GMT
+Wed, 08 Jan 2020 10:43:14 GMT
+Wed, 08 Jan 2020 10:43:17 GMT
+Wed, 08 Jan 2020 10:43:20 GMT
+Secret message is:
+"Volume bind mount is easy"
+Wed, 08 Jan 2020 10:43:26 GMT
+Wed, 08 Jan 2020 10:43:29 GMT
+Wed, 08 Jan 2020 10:43:32 GMT
+Wed, 08 Jan 2020 10:43:35 GMT
+root@cd91e91b0fb7:/usr/app# 
