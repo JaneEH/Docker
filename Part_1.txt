@@ -60,9 +60,9 @@ Wrote to file /usr/app/logs.txt
 Wrote to file /usr/app/logs.txt
 Wrote to file /usr/app/logs.txt
 ^CClosing file
-fi001530702@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker run -d devopsdockeruh/exec_bash_exercise
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker run -d devopsdockeruh/exec_bash_exercise
 e8e500d086244c27c5c9742d4771083eab828c79c83d760286871d12772d282a
-fi001530702@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker exec -it e8 bash
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker exec -it e8 bash
 root@e8e500d08624:/usr/app# tail -f ./logs.txt
 "Docker is easy"
 Wed, 08 Jan 2020 08:59:56 GMT
@@ -122,4 +122,41 @@ Searching..
 <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 </body></html>
 
-1.6
+1.8
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker exec -it cd bash
+root@cd91e91b0fb7:/usr/app# ls
+Dockerfile  README.md  index.js  logs.txt
+root@cd91e91b0fb7:/usr/app# cd logs.txt 
+bash: cd: logs.txt: Not a directory
+root@cd91e91b0fb7:/usr/app# cat logs.txt 
+Wed, 08 Jan 2020 10:43:11 GMT
+Wed, 08 Jan 2020 10:43:14 GMT
+Wed, 08 Jan 2020 10:43:17 GMT
+Wed, 08 Jan 2020 10:43:20 GMT
+Secret message is:
+"Volume bind mount is easy"
+Wed, 08 Jan 2020 10:43:26 GMT
+Wed, 08 Jan 2020 10:43:29 GMT
+Wed, 08 Jan 2020 10:43:32 GMT
+Wed, 08 Jan 2020 10:43:35 GMT
+root@cd91e91b0fb7:/usr/app# 
+
+1.9
+fi001530702@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker run -p 80:80 devopsdockeruh/ports_exercise
+Unable to find image 'devopsdockeruh/ports_exercise:latest' locally
+latest: Pulling from devopsdockeruh/ports_exercise
+cd784148e348: Pull complete 
+9abca35fefbf: Pull complete 
+7fc670963d22: Pull complete 
+893040f9bc16: Pull complete 
+b0ae6401e570: Pull complete 
+Digest: sha256:2ff93dd0c744aee7a8f00bc9558d09fd6279493da0d01769fe600f78fb4593f2
+Status: Downloaded newer image for devopsdockeruh/ports_exercise:latest
+
+> ports_exercise@1.0.0 start /usr/app
+> node index.js
+
+Listening on port 80, this means inside of the container. Use -p to map the port to a port of your local machine.
+
+@Jaanas-MacBook-Pro:~/Documents/School/Docker/1.6$ curl localhost:80
+Ports configured correctly!!
