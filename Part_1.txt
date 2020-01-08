@@ -15,4 +15,19 @@ CONTAINER ID        IMAGE                  COMMAND                  CREATED     
 REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
 nginx                                latest              f7bb5701a33c        10 days ago         126MB
 
+1.3
 
+@jaanas-mbp:~/Documents/School/Docker$ docker start -it devopsdockeruh/pull_exercise
+unknown shorthand flag: 't' in -t
+See 'docker start --help'.
+@jaanas-mbp:~/Documents/School/Docker$ docker start -it devopsdockeruh/pull_exercise bash
+unknown shorthand flag: 't' in -t
+See 'docker start --help'.
+@jaanas-mbp:~/Documents/School/Docker$ docker run -it devopsdockeruh/pull_exercise bash
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:346: starting container process caused "exec: \"bash\": executable file not found in $PATH": unknown.
+@jaanas-mbp:~/Documents/School/Docker$ docker run -it devopsdockeruh/pull_exercise
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+
+@jaanas-mbp:~/Documents/School/Docker$ 
