@@ -60,9 +60,9 @@ Wrote to file /usr/app/logs.txt
 Wrote to file /usr/app/logs.txt
 Wrote to file /usr/app/logs.txt
 ^CClosing file
-fi001530702@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker run -d devopsdockeruh/exec_bash_exercise
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker run -d devopsdockeruh/exec_bash_exercise
 e8e500d086244c27c5c9742d4771083eab828c79c83d760286871d12772d282a
-fi001530702@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker exec -it e8 bash
+@Jaanas-MacBook-Pro:~/Documents/School/Docker$ docker exec -it e8 bash
 root@e8e500d08624:/usr/app# tail -f ./logs.txt
 "Docker is easy"
 Wed, 08 Jan 2020 08:59:56 GMT
@@ -122,4 +122,4 @@ Searching..
 <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 </body></html>
 
-1.6
+
