@@ -1,0 +1,20 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt-get install -y nodejs
+RUN bash -c 'echo node -v && npm -v'
+
+
+COPY frontend-example-docker /usr/local/www/backend
+WORKDIR /usr/local/www/backend
+
+EXPOSE 5000
+
+RUN npm install
+RUN npm install -g serve
+
+ENV API_URL=http://http://192.168.99.100:8000
+RUN npm start 
+
+CMD ["serve", "-s", "-l", "5000", "dist"]
