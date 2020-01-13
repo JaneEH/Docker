@@ -1,0 +1,16 @@
+FROM ruby:latest
+
+RUN apt-get update && apt-get install -y nodejs 
+RUN curl -sL https://deb.nodesource.com/setup_10.x
+RUN npm install
+RUN gem install bundler
+RUN npm install yarn -g
+RUN bundle install
+
+COPY rails-example-project /usr/local/rails
+WORKDIR /usr/local/rails
+
+RUN rails db:migrate && rake assets:precompil
+
+EXPOSE 3000
+CMD ["rails", "s"]
