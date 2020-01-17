@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+    docker-backend-2.3: 
+      image: backend
+      ports:
+        - 8000:8000
+      volumes:
+        - ${PWD}/logs.txt:/usr/local/www/backend/logs.txt
+    docker-frontend-2.3:
+      image: front
+      ports:
+        - 5000:5000

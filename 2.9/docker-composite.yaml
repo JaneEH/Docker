@@ -1,0 +1,37 @@
+version: '3.5'
+
+services:
+    backend:
+      image: backend
+      restart: unless-stopped
+      volumes:
+        - ${PWD}/logs.txt:/usr/local/www/backend/logs.txt
+      environment:
+        - REDIS=localhost
+        - REDIS_PORT=6379
+        - DB_USERNAME=admin
+        - DB_PASSWORD=passw0rd
+        - DB_HOST=database
+        - FRONT_URL='/frontend'
+    redis:
+      image: redis:alpine
+    database:
+      image: postgres
+      restart: unless-stopped
+      environment:
+        - POSTGRES_PASSWORD=admin
+        - POSTGRES_USER=passw0rd
+      volumes:
+        - ./database_pg2:/var/lib/postgresql/data
+      container_name: postgres
+    frontend:
+      image: frontend
+      environment:
+        - API_URL='/test'
+    nginx:
+      image: nginx
+      ports:
+        - 80:80
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf
+      

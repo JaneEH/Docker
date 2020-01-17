@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+    docker-backend-2.5:
+      image: backend
+      ports:
+        - 8000:8000
+      volumes:
+        - ${PWD}/logs.txt:/usr/local/www/backend/logs.txt
+      environment:
+        - REDIS=localhost
+        - REDIS_PORT=6379
+      restart: unless-stopped
+    redis:
+      image: redis:alpine
+    docker-front-2.5:
+      image: frontend
+      ports:
+        - 5000:5000
